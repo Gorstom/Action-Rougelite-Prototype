@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://cseughat2laxw"]
 
+[ext_resource type="Script" uid="uid://darxplh0hiifr" path="res://scripts/systems/Player.gd" id="1_wr5hl"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o8nba"]
 size = Vector2(16, 24)
 
 [node name="Player" type="CharacterBody2D" unique_id=1267341805]
+script = ExtResource("1_wr5hl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2143963766]
 modulate = Color(0.80830705, 0, 0.15078527, 1)
