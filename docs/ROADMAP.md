@@ -6,8 +6,8 @@ Goal: The player can move and interact with enemies in a basic environment.
 
 ### Tasks
 - [x] Player movement (top-down)
-- [ ] Camera follow
-- [ ] Collision system
+- [x] Camera follow
+- [x] Collision system
 - [ ] Basic enemy (chase AI)
 - [ ] Enemy damage on contact
 - [ ] Player health system
