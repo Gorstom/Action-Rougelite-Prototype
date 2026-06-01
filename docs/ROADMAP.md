@@ -5,13 +5,13 @@
 Goal: The player can move and interact with enemies in a basic environment.
 
 ### Tasks
--  Player movement (top-down)
--  Camera follow
--  Collision system
--  Basic enemy (chase AI)
--  Enemy damage on contact
--  Player health system
--  Death - restart run
+- [x] Player movement (top-down)
+- [ ] Camera follow
+- [ ] Collision system
+- [ ] Basic enemy (chase AI)
+- [ ] Enemy damage on contact
+- [ ] Player health system
+- [ ] Death - restart run
 
 ### Result
 Minimal playable sandbox:
@@ -24,11 +24,11 @@ Minimal playable sandbox:
 ## Phase 2 – First Gameplay Loop (Combat Feel)
 Goal: Combat becomes interactive and meaningful.
 ### Tasks
--  Player attack (melee or simple ranged)
--  Enemy HP system
--  Hit feedback (knockback / flash / effects)
--  Basic combat cooldown system
--  Optional: second enemy type
+- [ ] Player attack (melee or simple ranged)
+- [ ] Enemy HP system
+- [ ] Hit feedback (knockback / flash / effects)
+- [ ] Basic combat cooldown system
+- [ ] Optional: second enemy type
 
 ### Result
 - player can actually defeat enemies
@@ -38,11 +38,11 @@ Goal: Combat becomes interactive and meaningful.
 ## Phase 3 – Dungeon Prototype
 Goal: First full “run” structure.
 ### Tasks
--  Single dungeon room system
--  Room transitions (doors / exits)
--  Procedural room layout
--  Enemy spawning per room
--  Loot drops system
+- [ ] Single dungeon room system
+- [ ] Room transitions (doors / exits)
+- [ ] Procedural room layout
+- [ ] Enemy spawning per room
+- [ ] Loot drops system
 
 ### Result
 - one run consists of multiple rooms
@@ -52,11 +52,11 @@ Goal: First full “run” structure.
 ## Phase 4 – Extraction Loop
 Goal: Core roguelite loop is functional.
 ### Tasks
--  Exit system (return to hub)
--  Inventory system for loot
--  Gold / currency system
--  Death penalty
--  Hub scene return flow
+- [ ] Exit system (return to hub)
+- [ ] Inventory system for loot
+- [ ] Gold / currency system
+- [ ] Death penalty
+- [ ] Hub scene return flow
 
 ### Result
 - player chooses between risk and safe extraction
@@ -68,11 +68,11 @@ Goal: Core roguelite loop is functional.
 
 Goal: Meta-progression between runs.
 ### Tasks
--  Shop / merchant system
--  Basic equipment system
--  Stat upgrades (HP / damage / speed)
--  Save / load system
--  Economy balancing
+- [ ] Shop / merchant system
+- [ ] Basic equipment system
+- [ ] Stat upgrades (HP / damage / speed)
+- [ ] Save / load system
+- [ ] Economy balancing
 
 ### Result
 - persistent progression between runs
@@ -83,21 +83,21 @@ Goal: Meta-progression between runs.
 ## Phase 6 – Content Expansion
 Goal: Increase replayability.
 ### Tasks
--  Enemy variety (ranged, fast, tank, elite)
--  Room types (treasure, combat, empty, elite)
--  Item rarity system
--  Improved procedural generation
--  Difficulty scaling per floor
+- [ ] Enemy variety (ranged, fast, tank, elite)
+- [ ] Room types (treasure, combat, empty, elite)
+- [ ] Item rarity system
+- [ ] Improved procedural generation
+- [ ] Difficulty scaling per floor
 ---
 
 ## Phase 7 – Polish (Optional MVP+)
 Goal: Game feel and presentation.
 ### Tasks
--  Visual effects (hit, death, pickup)
--  Sound system
--  UI polish
--  Improved enemy AI patterns
--  Performance optimization
+- [ ] Visual effects (hit, death, pickup)
+- [ ] Sound system
+- [ ] UI polish
+- [ ] Improved enemy AI patterns
+- [ ] Performance optimization
 
 ---
 
