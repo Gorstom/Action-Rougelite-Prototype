@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o8nba"]
 size = Vector2(16, 24)
 
-[node name="Player" type="CharacterBody2D" unique_id=1267341805]
+[node name="Player" type="CharacterBody2D" unique_id=1267341805 groups=["player"]]
 motion_mode = 1
 script = ExtResource("1_wr5hl")
 
