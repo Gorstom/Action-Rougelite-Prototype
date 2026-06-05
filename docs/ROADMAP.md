@@ -11,7 +11,7 @@ Goal: The player can move and interact with enemies in a basic environment.
 - [x] Basic enemy (chase AI)
 - [x] Enemy damage on contact
 - [x] Player health system
-- [ ] Death - restart run
+- [x] Death - restart run
 
 ### Result
 Minimal playable sandbox:
