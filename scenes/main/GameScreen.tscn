@@ -13,7 +13,7 @@ position = Vector2(576, 324)
 
 [node name="World" parent="." unique_id=34560498 instance=ExtResource("2_1x5vf")]
 
-[node name="Enemy" parent="." unique_id=74244914 instance=ExtResource("3_ptgyq")]
+[node name="Enemy" parent="." unique_id=74244914 groups=["enemy"] instance=ExtResource("3_ptgyq")]
 position = Vector2(34, 36)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1264593101]
