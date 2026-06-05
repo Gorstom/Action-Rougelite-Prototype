@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://d06kpxdl8neoq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjesc"]
+size = Vector2(1152, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5qbjp"]
+size = Vector2(16.25, 616)
+
+[node name="World" type="Node2D" unique_id=34560498]
+
+[node name="Walls" type="Node2D" parent="." unique_id=630482508]
+
+[node name="NorthWall" type="StaticBody2D" parent="Walls" unique_id=996023160]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/NorthWall" unique_id=986768681]
+position = Vector2(576, 8)
+shape = SubResource("RectangleShape2D_qjesc")
+
+[node name="SouthWall" type="StaticBody2D" parent="Walls" unique_id=1980230440]
+position = Vector2(0, 632)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/SouthWall" unique_id=1635876707]
+position = Vector2(576, 8)
+shape = SubResource("RectangleShape2D_qjesc")
+
+[node name="WestWall" type="StaticBody2D" parent="Walls" unique_id=1488364794]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WestWall" unique_id=948139396]
+position = Vector2(8.125, 324)
+shape = SubResource("RectangleShape2D_5qbjp")
+
+[node name="EastWall" type="StaticBody2D" parent="Walls" unique_id=671066004]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/EastWall" unique_id=1850197504]
+position = Vector2(1143.75, 324)
+shape = SubResource("RectangleShape2D_5qbjp")

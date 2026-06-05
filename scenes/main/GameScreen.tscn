@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c4pe44pjwwqwg"]
+
+[ext_resource type="PackedScene" uid="uid://cseughat2laxw" path="res://scenes/player/Player.tscn" id="1_fbi8i"]
+[ext_resource type="Script" uid="uid://dsn1csqqjugmy" path="res://scripts/ui/GameScreen.gd" id="1_ojcog"]
+[ext_resource type="PackedScene" uid="uid://d06kpxdl8neoq" path="res://scenes/world/World.tscn" id="2_1x5vf"]
+[ext_resource type="PackedScene" uid="uid://l4pa4u7rp5t5" path="res://scenes/enemies/Enemy.tscn" id="3_ptgyq"]
+
+[node name="GameScreen" type="Node2D" unique_id=1653608487]
+script = ExtResource("1_ojcog")
+
+[node name="Player" parent="." unique_id=1267341805 instance=ExtResource("1_fbi8i")]
+position = Vector2(576, 324)
+
+[node name="World" parent="." unique_id=34560498 instance=ExtResource("2_1x5vf")]
+
+[node name="Enemy" parent="." unique_id=74244914 groups=["enemy"] instance=ExtResource("3_ptgyq")]
+position = Vector2(34, 36)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1264593101]
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer" unique_id=2110165664]
+offset_left = 19.0
+offset_top = 19.0
+offset_right = 459.0
+offset_bottom = 106.0

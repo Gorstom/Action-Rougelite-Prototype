@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cseughat2laxw"]
+
+[ext_resource type="Script" uid="uid://darxplh0hiifr" path="res://scripts/entities/Player.gd" id="1_wr5hl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8nba"]
+size = Vector2(16, 24)
+
+[node name="Player" type="CharacterBody2D" unique_id=1267341805 groups=["player"]]
+motion_mode = 1
+script = ExtResource("1_wr5hl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2143963766]
+modulate = Color(0.80830705, 0, 0.15078527, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1382119073]
+shape = SubResource("RectangleShape2D_o8nba")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=562689518]
