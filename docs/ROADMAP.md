@@ -24,8 +24,8 @@ Minimal playable sandbox:
 ## Phase 2 – First Gameplay Loop (Combat Feel)
 Goal: Combat becomes interactive and meaningful.
 ### Tasks
-- [ ] Player attack (melee or simple ranged)
-- [ ] Enemy HP system
+- [x] Player attack (melee or simple ranged)
+- [x] Enemy HP system
 - [ ] Hit feedback (knockback / flash / effects)
 - [ ] Basic combat cooldown system
 - [ ] Optional: second enemy type
