@@ -26,7 +26,7 @@ Goal: Combat becomes interactive and meaningful.
 ### Tasks
 - [x] Player attack (melee or simple ranged)
 - [x] Enemy HP system
-- [ ] Hit feedback (knockback / flash / effects)
+- [x] Hit feedback (knockback / flash / effects)
 - [ ] Basic combat cooldown system
 - [ ] Optional: second enemy type
 
