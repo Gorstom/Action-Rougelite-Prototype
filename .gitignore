@@ -18,3 +18,5 @@ mono_crash.*.json
 
 /android/
 .obsidian/
+*.uid
+.vscode/

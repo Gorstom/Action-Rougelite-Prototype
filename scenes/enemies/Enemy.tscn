@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://l4pa4u7rp5t5"]
+
+[ext_resource type="Script" uid="uid://btdcgl2b7kpv8" path="res://scripts/entities/Enemy.gd" id="1_hpe7p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsdvy"]
+
+[node name="Enemy" type="CharacterBody2D" unique_id=74244914 groups=["enemy"]]
+script = ExtResource("1_hpe7p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1603714606]
+shape = SubResource("RectangleShape2D_jsdvy")
