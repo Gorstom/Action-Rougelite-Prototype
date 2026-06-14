@@ -38,7 +38,7 @@ Goal: Combat becomes interactive and meaningful.
 ## Phase 3 – Dungeon Prototype
 Goal: First full “run” structure.
 ### Tasks
-- [ ] Single dungeon room system
+- [x] Single dungeon room system
 - [ ] Room transitions (doors / exits)
 - [ ] Procedural room layout
 - [ ] Enemy spawning per room

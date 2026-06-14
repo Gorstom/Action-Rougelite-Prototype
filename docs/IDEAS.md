@@ -1,7 +1,7 @@
 # Milestone 1
 - [x] Player movement
-- [ ] Enemy AI
-- [ ] Basic combat
+- [x] Enemy AI
+- [x] Basic combat
 
 # Milestone 2
 - [ ] Procedural rooms
