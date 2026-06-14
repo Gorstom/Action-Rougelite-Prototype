@@ -13,9 +13,6 @@ position = Vector2(576, 324)
 
 [node name="World" parent="." unique_id=34560498 instance=ExtResource("2_1x5vf")]
 
-[node name="Enemy" parent="." unique_id=74244914 groups=["enemy"] instance=ExtResource("3_ptgyq")]
-position = Vector2(34, 36)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1264593101]
 
 [node name="HealthBar" type="ProgressBar" parent="CanvasLayer" unique_id=2110165664]
@@ -23,3 +20,8 @@ offset_left = 19.0
 offset_top = 19.0
 offset_right = 459.0
 offset_bottom = 106.0
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1467790855]
+
+[node name="Enemy" parent="Enemies" unique_id=74244914 instance=ExtResource("3_ptgyq")]
+position = Vector2(34, 36)
