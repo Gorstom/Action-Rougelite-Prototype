@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dsn1csqqjugmy" path="res://scripts/ui/GameScreen.gd" id="1_ojcog"]
 [ext_resource type="PackedScene" uid="uid://d06kpxdl8neoq" path="res://scenes/world/World.tscn" id="2_1x5vf"]
 [ext_resource type="PackedScene" uid="uid://l4pa4u7rp5t5" path="res://scenes/enemies/Enemy.tscn" id="3_ptgyq"]
+[ext_resource type="Script" uid="uid://b7o534aoq6h81" path="res://scripts/systems/RoomManager.gd" id="4_cce3o"]
 
 [node name="GameScreen" type="Node2D" unique_id=1653608487]
 script = ExtResource("1_ojcog")
@@ -21,7 +22,19 @@ offset_top = 19.0
 offset_right = 459.0
 offset_bottom = 106.0
 
+[node name="RoomManager" type="Node" parent="." unique_id=148718518]
+script = ExtResource("4_cce3o")
+enemy_scene = ExtResource("3_ptgyq")
+
 [node name="Enemies" type="Node2D" parent="." unique_id=1467790855]
 
-[node name="Enemy" parent="Enemies" unique_id=74244914 instance=ExtResource("3_ptgyq")]
-position = Vector2(34, 36)
+[node name="SpawnPoints" type="Marker2D" parent="." unique_id=1388227264]
+
+[node name="Spawn1" type="Marker2D" parent="SpawnPoints" unique_id=898847579]
+position = Vector2(765, 498)
+
+[node name="Spawn2" type="Marker2D" parent="SpawnPoints" unique_id=388381740]
+position = Vector2(872, 146)
+
+[node name="Spawn3" type="Marker2D" parent="SpawnPoints" unique_id=1468885016]
+position = Vector2(151, 520)
