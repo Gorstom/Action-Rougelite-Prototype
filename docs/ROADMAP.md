@@ -39,7 +39,7 @@ Goal: Combat becomes interactive and meaningful.
 Goal: First full “run” structure.
 ### Tasks
 - [x] Single dungeon room system
-- [ ] Room transitions (doors / exits)
+- [x] Room transitions (doors / exits)
 - [ ] Procedural room layout
 - [ ] Enemy spawning per room
 - [ ] Loot drops system
