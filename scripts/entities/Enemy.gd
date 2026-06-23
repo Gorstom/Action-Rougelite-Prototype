@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var damage := 10
 @export var attack_cooldown := 1.0
 
+signal died
+
 var can_attack := true
 
 var player: Node2D
@@ -74,4 +76,5 @@ func take_damage(amount):
 		die()
 
 func die():
+	died.emit()
 	queue_free()
