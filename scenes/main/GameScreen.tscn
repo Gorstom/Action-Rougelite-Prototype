@@ -2,14 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://cseughat2laxw" path="res://scenes/player/Player.tscn" id="1_fbi8i"]
 [ext_resource type="Script" uid="uid://dsn1csqqjugmy" path="res://scripts/ui/GameScreen.gd" id="1_ojcog"]
+[ext_resource type="PackedScene" uid="uid://d06kpxdl8neoq" path="res://scenes/world/World.tscn" id="2_1x5vf"]
 [ext_resource type="PackedScene" uid="uid://l4pa4u7rp5t5" path="res://scenes/enemies/Enemy.tscn" id="3_ptgyq"]
 [ext_resource type="Script" uid="uid://b7o534aoq6h81" path="res://scripts/systems/RoomManager.gd" id="4_cce3o"]
+[ext_resource type="PackedScene" uid="uid://blf5dhfga4en" path="res://scenes/world/rooms/CombatRoom01.tscn" id="6_il4ph"]
 
 [node name="GameScreen" type="Node2D" unique_id=1653608487]
 script = ExtResource("1_ojcog")
 
 [node name="Player" parent="." unique_id=1267341805 instance=ExtResource("1_fbi8i")]
 position = Vector2(576, 324)
+
+[node name="World" parent="." unique_id=34560498 instance=ExtResource("2_1x5vf")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1264593101]
 
@@ -22,3 +26,4 @@ offset_bottom = 106.0
 [node name="RoomManager" type="Node" parent="." unique_id=148718518]
 script = ExtResource("4_cce3o")
 enemy_scene = ExtResource("3_ptgyq")
+room_scene = ExtResource("6_il4ph")
