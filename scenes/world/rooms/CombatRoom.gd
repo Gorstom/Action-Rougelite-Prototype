@@ -4,7 +4,7 @@ extends Node2D
 
 var exits: Array[String] = []
 
-signal room_exit
+signal room_exit(direction: String)
 
 
 func _ready():
@@ -23,3 +23,12 @@ func _on_door_entered(direction):
 func lock_doors(value: bool):
 	for door in doors:
 		door.set_locked(value)
+
+func spawn_player_at(direction: String):
+	var player = get_tree().get_first_node_in_group("player")
+
+	if player == null:
+		return
+
+	var spawn = $PlayerSpawns.get_node(direction)
+	player.global_position = spawn.global_position

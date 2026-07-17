@@ -52,6 +52,8 @@ func load_room(entry_direction = null):
 		current_room.spawn_player_at(entry_direction)
 		
 func _on_room_exit(direction):
+	print("EXIT DIRECTION:", direction)
+
 	if state != RoomState.CLEANED:
 		return
 

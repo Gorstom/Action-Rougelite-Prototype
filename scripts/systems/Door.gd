@@ -17,6 +17,7 @@ func _on_body_entered(body):
 
 	if body.is_in_group("player"):
 		print("HIT:", body.name)
+		print("DOOR:", direction)
 		door_entered.emit(direction)
 
 func _ready():
