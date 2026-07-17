@@ -22,11 +22,11 @@ enum RoomState {
 var state := RoomState.ACTIVE
 var room_index := 0
 
-func start_room():
+func start_room(entry_direction = null):
 	state = RoomState.ACTIVE
 	room_index += 1
 	
-	load_room()
+	load_room(entry_direction)
 	
 	if current_room == null:
 		return
@@ -36,7 +36,7 @@ func start_room():
 	print("ROOM STARTED")
 	spawn_room()
 	
-func load_room():
+func load_room(entry_direction = null):
 	if current_room:
 		current_room.queue_free()
 	
@@ -48,7 +48,10 @@ func load_room():
 
 	spawn_points = current_room.get_node("SpawnPoints").get_children()
 	
-func _on_room_exit():
+	if entry_direction:
+		current_room.spawn_player_at(entry_direction)
+		
+func _on_room_exit(direction):
 	if state != RoomState.CLEANED:
 		return
 
