@@ -33,7 +33,7 @@ func start_room(entry_direction = null):
 
 	current_room.lock_doors(true)
 	
-	print("ROOM STARTED")
+	GameLogger.info("RoomManager", "Room started")
 	spawn_room()
 	
 func load_room(entry_direction = null):
@@ -52,7 +52,7 @@ func load_room(entry_direction = null):
 		current_room.spawn_player_at(entry_direction)
 		
 func _on_room_exit(direction):
-	print("EXIT DIRECTION:", direction)
+	GameLogger.info("RoomManager", "Exit direction: %s" % direction)
 
 	if state != RoomState.CLEANED:
 		return
@@ -74,8 +74,7 @@ func spawn_room():
 		current_room.get_node("Enemies").add_child(enemy)
 		enemies_alive += 1
 	
-	print("ROOM SPAWNED")
-	
+	GameLogger.info("RoomManager", "Room spawned")
 	
 # old wave system	
 #func spawn_wave(count: int):
@@ -97,12 +96,12 @@ func spawn_room():
 
 func _on_enemy_killed():
 	enemies_alive -= 1
-	print("ENEMY KILLED")
+	GameLogger.info("RoomManager", "Enemy killed")
 
 	if enemies_alive <= 0 and state == RoomState.ACTIVE:
 		state = RoomState.CLEANED
 		
 		current_room.lock_doors(false)
 		
-		print("ROOM CLEANED")
+		GameLogger.info("RoomManager", "Room cleaned")
 		room_cleared.emit()

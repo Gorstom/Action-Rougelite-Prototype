@@ -10,8 +10,10 @@ func _ready():
 	
 	player.hp_changed.connect(_on_hp_changed)
 	
-	print("MAX HP:", player.max_hp)
-	print("HP:", player.hp)
+	GameLogger.debug("GameScreen", "Player initialized - HP: %d/%d" % [
+		player.hp,
+		player.max_hp
+	])
 	
 	
 	room_manager.room_cleared.connect(_on_room_cleared)
@@ -24,7 +26,7 @@ func _on_door_entered():
 	_next_room()
 
 func _on_room_cleared():
-	print("ROOM CLEARED")
+	GameLogger.info("GameScreen", "Room cleared")
 	room_manager.state = room_manager.RoomState.CLEANED
 	
 	if get_tree() == null:

@@ -62,7 +62,7 @@ func attack(target):
 
 func take_damage(amount):
 	hp -= amount
-	print("ENEMY HAS TAKEN DAMAGE: ", amount)
+	GameLogger.debug("Enemy", "Enemy has taken damage: %d" % amount)
 	
 	# visual feedback
 	var knockback = (global_position - player.global_position).normalized()

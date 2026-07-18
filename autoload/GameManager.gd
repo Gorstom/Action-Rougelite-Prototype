@@ -14,8 +14,8 @@ func return_to_hub():
 	#get_tree().paused = false
 	#get_tree().change_scene_to_file("res://scenes/main/Hub.tscn")
 	
-	#put a placeholder while hud does not exist 
-	print("RETURNING TO HUB")
+	#put a placeholder while hub does not exist 
+	GameLogger.info("GameManager", "Returning to hub")
 	restart_run()
 
 func on_player_died():
@@ -24,7 +24,7 @@ func on_player_died():
 	
 	# prevent enemy outlives gamescene after player death
 	get_tree().call_group("enemy", "set_physics_process", false)
-	print("PLAYER DIED")
+	GameLogger.info("GameManager", "Player died")
 
 func restart_run():
 	get_tree().paused = false
@@ -35,11 +35,11 @@ func restart_run():
 	start_run()
 
 func quit_game():
-	print("GAME EXITED")
+	GameLogger.info("GameManager", "Game exited")
 	get_tree().quit()
 
 func _ready():
-	print("GAMEMANAGER READY")
+	GameLogger.info("GameManager", "GameManager ready")
 
 
 func _handle_esc():
@@ -59,5 +59,5 @@ func _handle_esc():
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
-		print("ESCAPE PRESSED")
+		GameLogger.info("GameManager", "Escape key pressed")
 		_handle_esc()

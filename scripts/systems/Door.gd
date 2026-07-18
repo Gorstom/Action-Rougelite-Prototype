@@ -10,19 +10,19 @@ func set_locked(value: bool):
 	visible = !value
 
 func _on_body_entered(body):
-	print("ENTER EVENT:", body.name)
+	GameLogger.debug("Door", "Body entered: %s" % body.name)
 	
 	if locked:
 		return
 
 	if body.is_in_group("player"):
-		print("HIT:", body.name)
-		print("DOOR:", direction)
+		GameLogger.debug("Door", "Hit")
+		GameLogger.info("Door", "Player entered door: %s" % direction)
 		door_entered.emit(direction)
 
 func _ready():
 	body_entered.connect(_on_body_entered)
-	print("DOOR READY")
+	GameLogger.debug("Door", "Door ready")
 	
 # debug
 #func _physics_process(delta):

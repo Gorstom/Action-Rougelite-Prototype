@@ -16,13 +16,13 @@ func take_damage(amount: int):
 	hp -= amount
 	hp_changed.emit(hp, max_hp)
 	
-	print("PLAYER HP: ", hp)
+	GameLogger.debug("Player", "Player has taken damage. Hp changed: %d / %d" % [hp, max_hp])
 	
 	if hp <= 0:
 		die()
 
 func die():
-	print("PLAYER DIED")
+	GameLogger.info("Player", "Player died")
 	GameManager.return_to_hub()
 
 func _physics_process(delta):
@@ -56,4 +56,4 @@ func attack():
 	
 func _ready() -> void:
 	hp = max_hp
-	print("PLAYER READY")
+	GameLogger.info("Player", "Player ready")
