@@ -43,6 +43,7 @@ func _ready():
 
 
 func _handle_esc():
+	GameLogger.debug("GameManager", "Current state: %s" % GameState.keys()[state])
 	if state == GameState.RUN:
 		get_tree().paused = !get_tree().paused
 		state = GameState.PAUSE
@@ -55,6 +56,7 @@ func _handle_esc():
 		restart_run()
 
 	else:
+		GameLogger.info("GameManager", "Quit Game function called")
 		quit_game()
 
 func _unhandled_input(event):

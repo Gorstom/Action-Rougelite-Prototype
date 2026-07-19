@@ -40,6 +40,8 @@ Goal: First full “run” structure.
 ### Tasks
 - [x] Single dungeon room system
 - [x] Room transitions (doors / exits)
+- [ ] Player run data
+- [ ] Basic inventory
 - [ ] Procedural room layout
 - [ ] Enemy spawning per room
 - [ ] Loot drops system
@@ -53,10 +55,10 @@ Goal: First full “run” structure.
 Goal: Core roguelite loop is functional.
 ### Tasks
 - [ ] Exit system (return to hub)
-- [ ] Inventory system for loot
 - [ ] Gold / currency system
 - [ ] Death penalty
 - [ ] Hub scene return flow
+- [ ] Risk/reward decisions
 
 ### Result
 - player chooses between risk and safe extraction
