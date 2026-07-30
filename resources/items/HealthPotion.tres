@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://btw02gd7xuwor" path="res://scripts/items/ItemData.gd" id="1_paslu"]
 
 [resource]
+resource_name = "HealthPotion"
 script = ExtResource("1_paslu")
 id = "health_potion"
 name = "Health Potion"

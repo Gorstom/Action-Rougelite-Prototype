@@ -2,6 +2,7 @@ extends Node
 
 @export var enemy_scene: PackedScene
 @export var rooms: Array[PackedScene]
+@export var chest_scene: PackedScene
 
 @onready var room_container = $"../World/RoomContainer"
 
@@ -92,7 +93,14 @@ func spawn_room():
 		#enemies_alive += 1
 	#print("WAVE SPWANED")
 
-
+func spawn_reward():
+	var chest = chest_scene.instantiate()
+	var reward_position = current_room.get_node("RewardPoint")
+	chest.global_position = current_room.global_position
+	
+	current_room.add_child(chest)
+	
+	GameLogger.info("RoomManager", "Reward spawned")
 
 func _on_enemy_killed():
 	enemies_alive -= 1
@@ -101,6 +109,7 @@ func _on_enemy_killed():
 	if enemies_alive <= 0 and state == RoomState.ACTIVE:
 		state = RoomState.CLEANED
 		
+		spawn_reward()
 		current_room.lock_doors(false)
 		
 		GameLogger.info("RoomManager", "Room cleaned")
