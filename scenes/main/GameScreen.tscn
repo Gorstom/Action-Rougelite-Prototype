@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://blf5dhfga4en" path="res://scenes/world/rooms/CombatRoom01.tscn" id="6_il4ph"]
 [ext_resource type="PackedScene" uid="uid://cig4coidhtprd" path="res://scenes/world/rooms/CombatRoom02.tscn" id="7_uvmpb"]
 [ext_resource type="PackedScene" uid="uid://bfp7tcwl3cmup" path="res://scenes/world/rooms/CombatRoom03.tscn" id="8_yuop4"]
+[ext_resource type="PackedScene" uid="uid://clej6j7jm1y4h" path="res://scenes/world/Chest.tscn" id="9_yuop4"]
 
 [node name="GameScreen" type="Node2D" unique_id=1653608487]
 script = ExtResource("1_ojcog")
@@ -29,3 +30,4 @@ offset_bottom = 106.0
 script = ExtResource("4_cce3o")
 enemy_scene = ExtResource("3_ptgyq")
 rooms = Array[PackedScene]([ExtResource("6_il4ph"), ExtResource("7_uvmpb"), ExtResource("8_yuop4")])
+chest_scene = ExtResource("9_yuop4")

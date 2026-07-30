@@ -96,7 +96,7 @@ func spawn_room():
 func spawn_reward():
 	var chest = chest_scene.instantiate()
 	var reward_position = current_room.get_node("RewardPoint")
-	chest.global_position = current_room.global_position
+	chest.global_position = reward_position.global_position
 	
 	current_room.add_child(chest)
 	

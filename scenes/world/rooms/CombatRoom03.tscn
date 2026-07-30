@@ -78,3 +78,6 @@ position = Vector2(680, 373)
 position = Vector2(503, 397)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=83579905]
+
+[node name="RewardPoint" type="Marker2D" parent="." unique_id=415091281]
+position = Vector2(719, 359)
