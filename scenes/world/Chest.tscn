@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://clej6j7jm1y4h"]
+
+[ext_resource type="Script" uid="uid://c48y70nsjfr6e" path="res://scripts/systems/Chest.gd" id="1_rjmyu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_la1ka"]
+size = Vector2(24, 20)
+
+[node name="Chest" type="Area2D" unique_id=954981596]
+script = ExtResource("1_rjmyu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1889476168]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=321435349]
+shape = SubResource("RectangleShape2D_la1ka")
+debug_color = Color(0.82188874, 0.25017688, 0.78141737, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
