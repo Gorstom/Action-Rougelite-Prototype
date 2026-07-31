@@ -56,4 +56,4 @@ func attack():
 	
 func _ready() -> void:
 	hp = max_hp
-	GameLogger.info("Player", "Player ready")
+	GameLogger.debug("Player", "Player ready")

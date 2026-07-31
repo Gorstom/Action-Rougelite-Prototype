@@ -16,3 +16,6 @@ func open():
 	var gold = 100
 	RunData.add_gold(gold)
 	GameLogger.info("Chest", "Chest opened: + %d gold" % gold)
+
+func _ready():
+	GameLogger.debug("Chest", "Chest ready")

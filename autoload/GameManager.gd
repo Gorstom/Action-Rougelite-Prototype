@@ -39,7 +39,7 @@ func quit_game():
 	get_tree().quit()
 
 func _ready():
-	GameLogger.info("GameManager", "GameManager ready")
+	GameLogger.debug("GameManager", "GameManager ready")
 
 
 func _handle_esc():

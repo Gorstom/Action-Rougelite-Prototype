@@ -11,7 +11,8 @@ func _ready():
 	for door in doors:
 		exits.append(door.direction)
 		door.door_entered.connect(_on_door_entered)
-
+	GameLogger.debug("CombatRoom", "Combat room ready")
+	
 func has_exit(direction: String) -> bool:
 	return direction in exits
 
