@@ -13,7 +13,7 @@ func add_gold(amount: int):
 
 func add_item(item):
 	inventory.append(item)
-
+	GameLogger.debug("RunData", RunData.inventory)
 
 func reset():
 	gold = 0
