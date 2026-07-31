@@ -40,8 +40,8 @@ Goal: First full “run” structure.
 ### Tasks
 - [x] Single dungeon room system
 - [x] Room transitions (doors / exits)
-- [ ] Player run data
-- [ ] Basic inventory
+- [x] Player run data
+- [x] Basic inventory
 - [ ] Procedural room layout
 - [ ] Enemy spawning per room
 - [ ] Loot drops system
