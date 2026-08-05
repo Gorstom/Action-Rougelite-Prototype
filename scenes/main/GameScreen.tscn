@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dsn1csqqjugmy" path="res://scripts/ui/GameScreen.gd" id="1_ojcog"]
 [ext_resource type="PackedScene" uid="uid://d06kpxdl8neoq" path="res://scenes/world/World.tscn" id="2_1x5vf"]
 [ext_resource type="PackedScene" uid="uid://l4pa4u7rp5t5" path="res://scenes/enemies/Enemy.tscn" id="3_ptgyq"]
-[ext_resource type="Script" uid="uid://b7o534aoq6h81" path="res://scripts/systems/RoomManager.gd" id="4_cce3o"]
+[ext_resource type="Script" uid="uid://b7o534aoq6h81" path="res://scripts/systems/dungeon/RoomManager.gd" id="4_cce3o"]
 [ext_resource type="PackedScene" uid="uid://blf5dhfga4en" path="res://scenes/world/rooms/CombatRoom01.tscn" id="6_il4ph"]
 [ext_resource type="PackedScene" uid="uid://cig4coidhtprd" path="res://scenes/world/rooms/CombatRoom02.tscn" id="7_uvmpb"]
 [ext_resource type="PackedScene" uid="uid://bfp7tcwl3cmup" path="res://scenes/world/rooms/CombatRoom03.tscn" id="8_yuop4"]
