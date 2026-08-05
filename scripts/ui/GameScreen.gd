@@ -5,14 +5,6 @@ extends Node2D
 @onready var room_manager = $RoomManager
 
 func _ready():
-	# tests for RoomGenerator:
-	var generator = DungeonGenerator.new()
-
-	var rooms = generator.generate(10)
-
-	for room in rooms:
-		GameLogger.debug("GameScreen", room.position)
-	
 	health_bar.max_value = player.max_hp
 	health_bar.value = player.hp
 	
@@ -25,7 +17,7 @@ func _ready():
 	
 	
 	room_manager.room_cleared.connect(_on_room_cleared)
-	room_manager.start_room()
+	room_manager.start_run()
 	
 func _on_door_entered():
 	if room_manager.state != room_manager.RoomState.CLEANED:
