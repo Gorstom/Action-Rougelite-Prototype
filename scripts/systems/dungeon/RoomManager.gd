@@ -129,12 +129,12 @@ func spawn_room():
 	for i in range(enemy_count):
 		var enemy = enemy_scene.instantiate()
 		
+		current_room.get_node("Enemies").add_child(enemy)
 		var spawn = spawn_points[i % spawn_points.size()]
-		enemy.global_position = spawn.global_position
+		enemy.global_position = spawn.global_position + Vector2(randf_range(-10,10), randf_range(-10,10))
 		
 		enemy.died.connect(_on_enemy_killed)
 		
-		current_room.get_node("Enemies").add_child(enemy)
 		enemies_alive += 1
 	
 	GameLogger.info("RoomManager", "Room spawned")
@@ -167,6 +167,10 @@ func spawn_reward():
 func _on_enemy_killed():
 	enemies_alive -= 1
 	GameLogger.info("RoomManager", "Enemy killed")
+	GameLogger.debug(
+		"RoomManager",
+		"Enemies left: %d" % enemies_alive
+	)
 
 	if enemies_alive <= 0 and state == RoomState.ACTIVE:
 		state = RoomState.CLEANED
