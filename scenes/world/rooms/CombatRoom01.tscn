@@ -14,6 +14,7 @@ size = Vector2(16, 20)
 
 [node name="CombatRoom01" type="Node2D" unique_id=1684186660]
 script = ExtResource("1_ctcj5")
+available_exits = Array[String](["LEFT", "RIGHT", "DOWN", "UP"])
 
 [node name="Walls" type="Node2D" parent="." unique_id=160219082]
 
@@ -99,15 +100,15 @@ position = Vector2(577, 47)
 [node name="DOWN" type="Marker2D" parent="PlayerSpawns" unique_id=618070565]
 position = Vector2(580, 607)
 
-[node name="EnemySpawnPoints" type="Marker2D" parent="." unique_id=1091409680]
+[node name="SpawnPoints" type="Marker2D" parent="." unique_id=1091409680]
 
-[node name="Spawn1" type="Marker2D" parent="EnemySpawnPoints" unique_id=1030622203]
+[node name="Spawn1" type="Marker2D" parent="SpawnPoints" unique_id=1030622203]
 position = Vector2(765, 498)
 
-[node name="Spawn2" type="Marker2D" parent="EnemySpawnPoints" unique_id=340401667]
+[node name="Spawn2" type="Marker2D" parent="SpawnPoints" unique_id=340401667]
 position = Vector2(872, 146)
 
-[node name="Spawn3" type="Marker2D" parent="EnemySpawnPoints" unique_id=1914903178]
+[node name="Spawn3" type="Marker2D" parent="SpawnPoints" unique_id=1914903178]
 position = Vector2(151, 520)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=226086514]

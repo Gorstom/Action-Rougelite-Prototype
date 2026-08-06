@@ -86,18 +86,35 @@ func _on_room_exit(direction):
 		
 	call_deferred("load_next_room", direction)
 
+func pick_room_for_entry(direction: String) -> PackedScene:
+	var possible_rooms = []
+
+	for room_scene in rooms:
+		var room = room_scene.instantiate()
+
+		if direction in room.available_exits:
+			possible_rooms.append(room_scene)
+
+		room.queue_free()
+
+	if possible_rooms.is_empty():
+		return null
+
+	return possible_rooms.pick_random()
+
 func load_next_room(direction):
 	if current_room:
 		current_room.queue_free()
+		
+	var next_room_scene = pick_room_for_entry(opposite_direction(direction))
 	
-	var next_room_scene = rooms.pick_random()
 	current_room = next_room_scene.instantiate()
 	
 	room_container.add_child(current_room)
 	current_room.room_exit.connect(_on_room_exit)
 
 	spawn_points = current_room.get_node("SpawnPoints").get_children()
-	current_room.spawn_player_at(direction)
+	current_room.spawn_player_at(opposite_direction(direction))
 	current_room.lock_doors(true)
 
 	enemies_alive = 0
@@ -197,3 +214,16 @@ func test_navigation():
 		GameLogger.debug("RoomManager", "Moved to: %s" % current_room_node.position)
 	else:
 		GameLogger.debug("RoomManager", "No room there")
+
+func opposite_direction(direction: String) -> String:
+	match direction:
+		"LEFT":
+			return "RIGHT"
+		"RIGHT":
+			return "LEFT"
+		"UP":
+			return "DOWN"
+		"DOWN":
+			return "UP"
+
+	return direction

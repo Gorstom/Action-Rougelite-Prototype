@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var doors = $Doors.get_children()
+@export var available_exits: Array[String]
 
 var exits: Array[String] = []
 

@@ -15,6 +15,7 @@ size = Vector2(16, 20)
 [node name="CombatRoom03" type="Node2D" unique_id=1684186660]
 position = Vector2(0, -1)
 script = ExtResource("1_k1y76")
+available_exits = Array[String](["LEFT", "UP", "RIGHT", "DOWN"])
 
 [node name="Walls" type="Node2D" parent="." unique_id=1296163215]
 
