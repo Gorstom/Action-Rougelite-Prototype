@@ -37,7 +37,7 @@ func create_dungeon():
 	for room in dungeon:
 		GameLogger.debug("RoomManager", str(room.position))
 	
-	test_navigation()
+	#test_navigation()
 	
 func start_run():
 	create_dungeon()
@@ -57,11 +57,22 @@ func start_room(entry_direction = null):
 	GameLogger.info("RoomManager", "Room started")
 	spawn_room()
 	
-func load_room(entry_direction = null):
+func load_room(direction = null):
+	state = RoomState.ACTIVE
+
 	if current_room:
 		current_room.queue_free()
 	
-	var next_room = rooms.pick_random()
+	var next_room 
+	
+	if direction:
+		next_room = pick_room_for_entry(opposite_direction(direction))
+	else:
+		next_room = rooms.pick_random()
+	
+	if next_room == null:
+		return
+
 	current_room = next_room.instantiate()
 	room_container.add_child(current_room)
 	
@@ -69,8 +80,8 @@ func load_room(entry_direction = null):
 
 	spawn_points = current_room.get_node("SpawnPoints").get_children()
 	
-	if entry_direction:
-		current_room.spawn_player_at(entry_direction)
+	if direction:
+		current_room.spawn_player_at(direction)
 		
 func _on_room_exit(direction):
 	GameLogger.info("RoomManager", "Exit direction: %s" % direction)
@@ -103,9 +114,10 @@ func pick_room_for_entry(direction: String) -> PackedScene:
 	return possible_rooms.pick_random()
 
 func load_next_room(direction):
+	state = RoomState.ACTIVE
 	if current_room:
 		current_room.queue_free()
-		
+	
 	var next_room_scene = pick_room_for_entry(opposite_direction(direction))
 	
 	current_room = next_room_scene.instantiate()
@@ -118,6 +130,10 @@ func load_next_room(direction):
 	current_room.lock_doors(true)
 
 	enemies_alive = 0
+	GameLogger.debug(
+	"RoomManager",
+	"Current graph room: %s" % current_room_node.position
+)
 	spawn_room()
 
 	GameLogger.info("RoomManager", "Moved to room: %s" % current_room_node.position)
@@ -169,7 +185,7 @@ func _on_enemy_killed():
 	GameLogger.info("RoomManager", "Enemy killed")
 	GameLogger.debug(
 		"RoomManager",
-		"Enemies left: %d" % enemies_alive
+		"Enemies left: %d State: %d" % [enemies_alive, state]
 	)
 
 	if enemies_alive <= 0 and state == RoomState.ACTIVE:

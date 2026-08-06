@@ -19,12 +19,16 @@ func return_to_hub():
 	restart_run()
 
 func on_player_died():
-	state = GameState.DEATH
-	get_tree().paused = true
-	
 	# prevent enemy outlives gamescene after player death
 	get_tree().call_group("enemy", "set_physics_process", false)
 	GameLogger.info("GameManager", "Player died")
+	
+	GameLogger.info("GameManager", "Returning to hub")
+	state = GameState.DEATH
+	get_tree().paused = true
+	RunData.reset()
+
+
 
 func restart_run():
 	get_tree().paused = false
