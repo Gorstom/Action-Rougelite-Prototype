@@ -66,6 +66,28 @@ shape = SubResource("RectangleShape2D_avber")
 
 [node name="Sprite2D" type="Sprite2D" parent="Doors/DoorRight" unique_id=1045764378]
 
+[node name="DoorUp" type="Area2D" parent="Doors" unique_id=1093389459]
+position = Vector2(100, 0)
+script = ExtResource("2_c4mqu")
+direction = "UP"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/DoorUp" unique_id=709534948]
+position = Vector2(478, 220)
+shape = SubResource("RectangleShape2D_avber")
+
+[node name="Sprite2D" type="Sprite2D" parent="Doors/DoorUp" unique_id=1779260793]
+
+[node name="DoorDown" type="Area2D" parent="Doors" unique_id=633223623]
+position = Vector2(300, 0)
+script = ExtResource("2_c4mqu")
+direction = "DOWN"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/DoorDown" unique_id=837110773]
+position = Vector2(279, 617)
+shape = SubResource("RectangleShape2D_avber")
+
+[node name="Sprite2D" type="Sprite2D" parent="Doors/DoorDown" unique_id=570129625]
+
 [node name="SpawnPoints" type="Marker2D" parent="." unique_id=525663128]
 
 [node name="Spawn1" type="Marker2D" parent="SpawnPoints" unique_id=853599841]
@@ -81,3 +103,17 @@ position = Vector2(503, 397)
 
 [node name="RewardPoint" type="Marker2D" parent="." unique_id=415091281]
 position = Vector2(719, 359)
+
+[node name="PlayerSpawns" type="Marker2D" parent="." unique_id=981548970]
+position = Vector2(58, 324)
+
+[node name="LEFT" type="Marker2D" parent="PlayerSpawns" unique_id=909059983]
+
+[node name="RIGHT" type="Marker2D" parent="PlayerSpawns" unique_id=497645367]
+position = Vector2(1041, -3)
+
+[node name="UP" type="Marker2D" parent="PlayerSpawns" unique_id=382272028]
+position = Vector2(520, -73)
+
+[node name="DOWN" type="Marker2D" parent="PlayerSpawns" unique_id=123806915]
+position = Vector2(521, 259)

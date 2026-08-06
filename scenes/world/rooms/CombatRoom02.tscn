@@ -80,3 +80,11 @@ position = Vector2(526, 144)
 
 [node name="RewardPoint" type="Marker2D" parent="." unique_id=1729470241]
 position = Vector2(674, 265)
+
+[node name="PlayerSpawns" type="Marker2D" parent="." unique_id=979482630]
+position = Vector2(58, 324)
+
+[node name="LEFT" type="Marker2D" parent="PlayerSpawns" unique_id=1539151720]
+
+[node name="RIGHT" type="Marker2D" parent="PlayerSpawns" unique_id=1783099973]
+position = Vector2(1041, -3)

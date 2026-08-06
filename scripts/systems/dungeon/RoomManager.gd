@@ -78,7 +78,32 @@ func _on_room_exit(direction):
 	if state != RoomState.CLEANED:
 		return
 
-	call_deferred("start_room")
+	var next_room = move_to_next_room(direction)
+	
+	if next_room == null:
+		GameLogger.info("RoomManager", "No room in this direction")
+		return
+		
+	call_deferred("load_next_room", direction)
+
+func load_next_room(direction):
+	if current_room:
+		current_room.queue_free()
+	
+	var next_room_scene = rooms.pick_random()
+	current_room = next_room_scene.instantiate()
+	
+	room_container.add_child(current_room)
+	current_room.room_exit.connect(_on_room_exit)
+
+	spawn_points = current_room.get_node("SpawnPoints").get_children()
+	current_room.spawn_player_at(direction)
+	current_room.lock_doors(true)
+
+	enemies_alive = 0
+	spawn_room()
+
+	GameLogger.info("RoomManager", "Moved to room: %s" % current_room_node.position)
 
 func spawn_room():
 	enemies_alive = 0
