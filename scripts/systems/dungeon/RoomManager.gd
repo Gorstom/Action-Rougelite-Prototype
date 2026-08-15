@@ -65,6 +65,11 @@ func load_room(direction = null):
 	
 	var next_room 
 	
+	GameLogger.debug(
+	"RoomManager",
+	"Entering graph node: %s" % current_room_node.position
+	)
+	
 	if direction:
 		next_room = pick_room_for_entry(opposite_direction(direction))
 	else:
