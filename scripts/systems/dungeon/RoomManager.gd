@@ -56,24 +56,36 @@ func start_room(entry_direction = null):
 	
 	GameLogger.info("RoomManager", "Room started")
 	spawn_room()
-	
+
+func get_required_exits(room_node: RoomNode) -> Array[String]:
+	var exits: Array[String] = []
+
+	for neighbor in room_node.neighbors:
+		var diff = neighbor.position - room_node.position
+
+		if diff == Vector2i.LEFT:
+			exits.append("LEFT")
+		elif diff == Vector2i.RIGHT:
+			exits.append("RIGHT")
+		elif diff == Vector2i.UP:
+			exits.append("UP")
+		elif diff == Vector2i.DOWN:
+			exits.append("DOWN")
+
+	return exits
+
 func load_room(direction = null):
 	state = RoomState.ACTIVE
 
 	if current_room:
 		current_room.queue_free()
 	
-	var next_room 
-	
 	GameLogger.debug(
 	"RoomManager",
 	"Entering graph node: %s" % current_room_node.position
 	)
 	
-	if direction:
-		next_room = pick_room_for_entry(opposite_direction(direction))
-	else:
-		next_room = rooms.pick_random()
+	var next_room = pick_room_for_node(current_room_node)
 	
 	if next_room == null:
 		return
@@ -118,12 +130,54 @@ func pick_room_for_entry(direction: String) -> PackedScene:
 
 	return possible_rooms.pick_random()
 
+func pick_room_for_node(room_node: RoomNode) -> PackedScene:
+	var required_exits = get_required_exits(room_node)
+	GameLogger.debug(
+		"RoomManager",
+		"Required exits: %s" % required_exits
+	)
+	var possible_rooms: Array[PackedScene] = []
+
+	for room_scene in rooms:
+		GameLogger.debug(
+			"RoomManager",
+			"Checking scene: %s" % room_scene.resource_path
+		)
+		var room = room_scene.instantiate()
+	
+		GameLogger.debug(
+			"RoomManager",
+			"Scene exits: %s" % room.get_exits()
+		)
+
+		if room.has_exact_exits(required_exits):
+			GameLogger.debug(
+				"RoomManager",
+				"FOUND: %s" % room_scene.resource_path
+			)
+
+			possible_rooms.append(room_scene)
+
+		room.queue_free()
+
+	if possible_rooms.is_empty():
+		GameLogger.error(
+			"RoomManager",
+			"No room found for exits: %s" % required_exits
+		)
+		return null
+
+	return possible_rooms.pick_random()
+
 func load_next_room(direction):
 	state = RoomState.ACTIVE
 	if current_room:
 		current_room.queue_free()
 	
 	var next_room_scene = pick_room_for_entry(opposite_direction(direction))
+	
+	if next_room_scene == null:
+		return
 	
 	current_room = next_room_scene.instantiate()
 	

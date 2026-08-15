@@ -12,11 +12,36 @@ func _ready():
 	for door in doors:
 		exits.append(door.direction)
 		door.door_entered.connect(_on_door_entered)
+		
+	GameLogger.debug(
+	"CombatRoom",
+	"Available exits: %s | Actual exits: %s" % [
+		available_exits,
+		exits
+	])
+	
 	GameLogger.debug("CombatRoom", "Combat room ready")
+
+func get_exits() -> Array[String]:
+	var result: Array[String] = []
+
+	for door in doors:
+		result.append(door.direction)
+
+	return result
 	
 func has_exit(direction: String) -> bool:
 	return direction in exits
 
+func has_exact_exits(required_exits: Array[String]) -> bool:
+	if exits.size() != required_exits.size():
+		return false
+
+	for exit in required_exits:
+		if exit not in exits:
+			return false
+
+	return true
 
 func _on_door_entered(direction):
 	room_exit.emit(direction)
