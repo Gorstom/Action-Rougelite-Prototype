@@ -114,46 +114,46 @@ func _on_room_exit(direction):
 		
 	call_deferred("load_next_room", direction)
 
-func pick_room_for_entry(direction: String) -> PackedScene:
-	var possible_rooms = []
-
-	for room_scene in rooms:
-		var room = room_scene.instantiate()
-
-		if direction in room.available_exits:
-			possible_rooms.append(room_scene)
-
-		room.queue_free()
-
-	if possible_rooms.is_empty():
-		return null
-
-	return possible_rooms.pick_random()
+#func pick_room_for_entry(direction: String) -> PackedScene:
+	#var possible_rooms = []
+#
+	#for room_scene in rooms:
+		#var room = room_scene.instantiate()
+#
+		#if direction in room.available_exits:
+			#possible_rooms.append(room_scene)
+#
+		#room.queue_free()
+#
+	#if possible_rooms.is_empty():
+		#return null
+#
+	#return possible_rooms.pick_random()
 
 func pick_room_for_node(room_node: RoomNode) -> PackedScene:
 	var required_exits = get_required_exits(room_node)
 	GameLogger.debug(
 		"RoomManager",
-		"Required exits: %s" % required_exits
+		"Required exits: " + str(required_exits)
 	)
 	var possible_rooms: Array[PackedScene] = []
 
 	for room_scene in rooms:
 		GameLogger.debug(
 			"RoomManager",
-			"Checking scene: %s" % room_scene.resource_path
+			"Checking scene: " + room_scene.resource_path
 		)
 		var room = room_scene.instantiate()
 	
 		GameLogger.debug(
 			"RoomManager",
-			"Scene exits: %s" % room.get_exits()
+			"Scene exits: " + str(room.get_exits())
 		)
 
 		if room.has_exact_exits(required_exits):
 			GameLogger.debug(
 				"RoomManager",
-				"FOUND: %s" % room_scene.resource_path
+				"FOUND: " + str(room_scene.resource_path)
 			)
 
 			possible_rooms.append(room_scene)
@@ -163,7 +163,7 @@ func pick_room_for_node(room_node: RoomNode) -> PackedScene:
 	if possible_rooms.is_empty():
 		GameLogger.error(
 			"RoomManager",
-			"No room found for exits: %s" % required_exits
+			"No room found for exits: " + str(required_exits)
 		)
 		return null
 
@@ -174,14 +174,14 @@ func load_next_room(direction):
 	if current_room:
 		current_room.queue_free()
 	
-	var next_room_scene = pick_room_for_entry(opposite_direction(direction))
+	var next_room_scene = pick_room_for_node(current_room_node)
 	
 	if next_room_scene == null:
 		return
 	
 	current_room = next_room_scene.instantiate()
-	
 	room_container.add_child(current_room)
+	
 	current_room.room_exit.connect(_on_room_exit)
 
 	spawn_points = current_room.get_node("SpawnPoints").get_children()
@@ -265,18 +265,26 @@ func get_room_at(position: Vector2i) -> RoomNode:
 	return null
 
 func move_to_next_room(direction):
+	GameLogger.debug(
+		"RoomManager",
+		"Moving from %s direction=%s" % [
+			current_room_node.position,
+			direction
+		]
+	)
+	
 	var next_position = current_room_node.position
 	
 	
 	match direction:
-		RoomNode.Direction.LEFT:
+		"LEFT":
 			next_position.x -= 1
-		RoomNode.Direction.RIGHT:
+		"RIGHT":
 			next_position.x += 1
-		RoomNode.Direction.DOWN:
-			next_position.y -= 1
-		RoomNode.Direction.UP:
+		"DOWN":
 			next_position.y += 1
+		"UP":
+			next_position.y -= 1
 	
 	var next_room = get_room_at(next_position)
 	

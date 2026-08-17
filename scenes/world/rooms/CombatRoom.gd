@@ -1,44 +1,45 @@
 extends Node2D
 
 @onready var doors = $Doors.get_children()
-@export var available_exits: Array[String]
-
-var exits: Array[String] = []
+#@export var available_exits: Array[String]
+#
+#var exits: Array[String] = []
 
 signal room_exit(direction: String)
 
 
 func _ready():
 	for door in doors:
-		exits.append(door.direction)
 		door.door_entered.connect(_on_door_entered)
 		
-	GameLogger.debug(
-	"CombatRoom",
-	"Available exits: %s | Actual exits: %s" % [
-		available_exits,
-		exits
-	])
+	#GameLogger.debug(
+	#"CombatRoom",
+	#"Available exits: %s | Actual exits: %s" % [
+		#available_exits,
+		#exits
+	#])
 	
 	GameLogger.debug("CombatRoom", "Combat room ready")
 
 func get_exits() -> Array[String]:
 	var result: Array[String] = []
 
-	for door in doors:
+	for door in $Doors.get_children():
 		result.append(door.direction)
 
 	return result
 	
-func has_exit(direction: String) -> bool:
-	return direction in exits
+#func has_exit(direction: String) -> bool:
+	#return direction in exits
 
 func has_exact_exits(required_exits: Array[String]) -> bool:
-	if exits.size() != required_exits.size():
+	var actual_exits = get_exits()
+	
+	if actual_exits.size() != required_exits.size():
 		return false
 
 	for exit in required_exits:
-		if exit not in exits:
+		if exit not in actual_exits:
 			return false
 
 	return true

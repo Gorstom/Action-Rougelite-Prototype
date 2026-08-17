@@ -11,6 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://b4gjmldjb5y63" path="res://scenes/world/rooms/CombatRoom04.tscn" id="9_eygq3"]
 [ext_resource type="PackedScene" uid="uid://clej6j7jm1y4h" path="res://scenes/world/Chest.tscn" id="9_yuop4"]
 [ext_resource type="PackedScene" uid="uid://drlksa4btqthu" path="res://scenes/world/rooms/CombatRoom05.tscn" id="10_bnna5"]
+[ext_resource type="PackedScene" uid="uid://b7wtvugp3jt05" path="res://scenes/world/rooms/CombatRoom06.tscn" id="11_34663"]
+[ext_resource type="PackedScene" uid="uid://dyye4nqulf4rv" path="res://scenes/world/rooms/CombatRoom07.tscn" id="12_3dglm"]
+[ext_resource type="PackedScene" uid="uid://ce3xrfusc1li3" path="res://scenes/world/rooms/CombatRoom08.tscn" id="13_asaxn"]
+[ext_resource type="PackedScene" uid="uid://darhsma1m0esb" path="res://scenes/world/rooms/CombatRoom09.tscn" id="14_nx58t"]
+[ext_resource type="PackedScene" uid="uid://byfiuc7ncf30f" path="res://scenes/world/rooms/CombatRoom10.tscn" id="15_jshcd"]
+[ext_resource type="PackedScene" uid="uid://bm7oand4nlxon" path="res://scenes/world/rooms/CombatRoom11.tscn" id="16_7mmrl"]
 
 [node name="GameScreen" type="Node2D" unique_id=1653608487]
 script = ExtResource("1_ojcog")
@@ -31,5 +37,5 @@ offset_bottom = 106.0
 [node name="RoomManager" type="Node" parent="." unique_id=148718518]
 script = ExtResource("4_cce3o")
 enemy_scene = ExtResource("3_ptgyq")
-rooms = Array[PackedScene]([ExtResource("6_il4ph"), ExtResource("7_uvmpb"), ExtResource("8_yuop4"), ExtResource("9_eygq3"), ExtResource("10_bnna5")])
+rooms = Array[PackedScene]([ExtResource("6_il4ph"), ExtResource("7_uvmpb"), ExtResource("8_yuop4"), ExtResource("9_eygq3"), ExtResource("10_bnna5"), ExtResource("11_34663"), ExtResource("12_3dglm"), ExtResource("13_asaxn"), ExtResource("14_nx58t"), ExtResource("15_jshcd"), ExtResource("16_7mmrl")])
 chest_scene = ExtResource("9_yuop4")
