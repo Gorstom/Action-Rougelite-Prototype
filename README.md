@@ -10,6 +10,7 @@ Top-down action roguelite prototype made in Godot. Focuses on procedural dungeon
 - loot system
 - top-down movement
 - simple game loop (death → restart)
+- procedural dungeon generation
 
 ### In progress
-- procedural dungeon generation
+- Loot drops system
