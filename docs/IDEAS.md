@@ -4,7 +4,7 @@
 - [x] Basic combat
 
 # Milestone 2
-- [ ] Procedural rooms
+- [x] Procedural rooms
 - [ ] Loot
 
 # Milestone 3
