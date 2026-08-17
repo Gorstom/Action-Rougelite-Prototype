@@ -42,7 +42,7 @@ Goal: First full “run” structure.
 - [x] Room transitions (doors / exits)
 - [x] Player run data
 - [x] Basic inventory
-- [ ] Procedural room layout
+- [x] Procedural room layout
 - [x] Enemy spawning per room
 - [ ] Loot drops system
 
