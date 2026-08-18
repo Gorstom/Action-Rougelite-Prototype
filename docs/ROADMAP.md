@@ -106,9 +106,8 @@ Goal: Game feel and presentation.
 ## MVP Definition
 
 The project is considered a minimum playable game when:
-- the player can enter a dungeon
+- player can enter a dungeon
 - fight enemies
 - collect loot
 - return to the hub
-- upgrade equipment
 - start a new run
