@@ -32,7 +32,7 @@ The project is used to experiment with:
 - loot and broadly understood reward systems
 - basic roguelite gameplay loops
 
-Feel free to reuse any of the code snippets, or even entire systems, if they are usefeul to you.
+Feel free to reuse any of the code snippets, or even entire systems, if they are useful to you.
 
 ## Technical details
 - Engine: Godot 4.7
