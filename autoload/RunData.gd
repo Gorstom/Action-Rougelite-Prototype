@@ -9,7 +9,7 @@ var damage := 25
 
 func add_gold(amount: int):
 	gold += amount
-
+	GameLogger.debug("RunData", "Added %d gold" % gold)
 
 func add_item(item):
 	inventory.append(item)

@@ -5,6 +5,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_timmb"]
 
 [node name="GoldPickup" type="Area2D" unique_id=1902789680]
+collision_layer = 2
 script = ExtResource("1_d6o0a")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=226492735]
@@ -12,3 +13,5 @@ script = ExtResource("1_d6o0a")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=685098458]
 shape = SubResource("CapsuleShape2D_timmb")
 debug_color = Color(1, 1, 0, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

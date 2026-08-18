@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var damage := 10
 @export var attack_cooldown := 1.0
 
-signal died
+signal died(position: Vector2)
 
 var can_attack := true
 
@@ -76,5 +76,5 @@ func take_damage(amount):
 		die()
 
 func die():
-	died.emit()
+	died.emit(global_position)
 	queue_free()

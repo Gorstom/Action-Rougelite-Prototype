@@ -3,6 +3,7 @@ extends Node
 @export var enemy_scene: PackedScene
 @export var rooms: Array[PackedScene]
 @export var chest_scene: PackedScene
+@export var gold_pickup_scene: PackedScene
 
 @onready var room_container = $"../World/RoomContainer"
 
@@ -239,13 +240,20 @@ func spawn_reward():
 	
 	GameLogger.info("RoomManager", "Reward spawned")
 
-func _on_enemy_killed():
+func spawn_loot(position: Vector2):
+	var gold = gold_pickup_scene.instantiate()
+	gold.global_position = position
+	current_room.add_child(gold)
+	GameLogger.info("RoomManager", "Loot spawned")
+
+func _on_enemy_killed(enemy_position: Vector2):
 	enemies_alive -= 1
 	GameLogger.info("RoomManager", "Enemy killed")
 	GameLogger.debug(
 		"RoomManager",
 		"Enemies left: %d State: %d" % [enemies_alive, state]
 	)
+	spawn_loot(enemy_position)
 
 	if enemies_alive <= 0 and state == RoomState.ACTIVE:
 		state = RoomState.CLEANED
