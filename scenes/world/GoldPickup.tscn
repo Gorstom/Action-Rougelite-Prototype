@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://dcw3jxn85e8uh"]
 
+[ext_resource type="Script" uid="uid://c2ll1owxqudn7" path="res://scripts/entities/GoldPickup.gd" id="1_d6o0a"]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_timmb"]
 
 [node name="GoldPickup" type="Area2D" unique_id=1902789680]
+script = ExtResource("1_d6o0a")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=226492735]
 
