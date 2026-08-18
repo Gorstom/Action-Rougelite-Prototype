@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://ce3xrfusc1li3"]
+
+[ext_resource type="Script" uid="uid://grhefsww5ewv" path="res://scenes/world/rooms/CombatRoom.gd" id="1_lqpbw"]
+[ext_resource type="Script" uid="uid://pd58ab52cy24" path="res://scripts/systems/Door.gd" id="2_jfe3h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oo1ch"]
+size = Vector2(1152, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ytdog"]
+size = Vector2(16.25, 616)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40kph"]
+size = Vector2(16, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqpbw"]
+size = Vector2(16, 20)
+
+[node name="CombatRoom08" type="Node2D" unique_id=1684186660]
+position = Vector2(0, -1)
+script = ExtResource("1_lqpbw")
+
+[node name="Walls" type="Node2D" parent="." unique_id=1296163215]
+
+[node name="NorthWall" type="StaticBody2D" parent="Walls" unique_id=1159851157]
+position = Vector2(0, 207)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/NorthWall" unique_id=924248279]
+position = Vector2(576, 8)
+shape = SubResource("RectangleShape2D_oo1ch")
+
+[node name="SouthWall" type="StaticBody2D" parent="Walls" unique_id=130231578]
+position = Vector2(0, 448)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/SouthWall" unique_id=708723495]
+position = Vector2(576, 176)
+shape = SubResource("RectangleShape2D_oo1ch")
+
+[node name="WestWall" type="StaticBody2D" parent="Walls" unique_id=316214839]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WestWall" unique_id=897217425]
+position = Vector2(8.125, 324)
+shape = SubResource("RectangleShape2D_ytdog")
+
+[node name="EastWall" type="StaticBody2D" parent="Walls" unique_id=381786939]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/EastWall" unique_id=1091243664]
+position = Vector2(1143.75, 324)
+shape = SubResource("RectangleShape2D_ytdog")
+
+[node name="Doors" type="Node2D" parent="." unique_id=604122808]
+
+[node name="DoorRight" type="Area2D" parent="Doors" unique_id=2145893745]
+script = ExtResource("2_jfe3h")
+direction = "RIGHT"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/DoorRight" unique_id=1274066571]
+position = Vector2(1138, 321)
+shape = SubResource("RectangleShape2D_40kph")
+
+[node name="Sprite2D" type="Sprite2D" parent="Doors/DoorRight" unique_id=757868168]
+
+[node name="DoorDown" type="Area2D" parent="Doors" unique_id=1608664860]
+position = Vector2(300, 0)
+script = ExtResource("2_jfe3h")
+direction = "DOWN"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/DoorDown" unique_id=1816926657]
+position = Vector2(279, 617)
+shape = SubResource("RectangleShape2D_lqpbw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Doors/DoorDown" unique_id=1021808210]
+
+[node name="SpawnPoints" type="Marker2D" parent="." unique_id=525663128]
+
+[node name="Spawn1" type="Marker2D" parent="SpawnPoints" unique_id=853599841]
+position = Vector2(585, 300)
+
+[node name="Spawn2" type="Marker2D" parent="SpawnPoints" unique_id=1197839846]
+position = Vector2(680, 373)
+
+[node name="Spawn3" type="Marker2D" parent="SpawnPoints" unique_id=1278906734]
+position = Vector2(503, 397)
+
+[node name="Enemies" type="Node2D" parent="." unique_id=83579905]
+
+[node name="RewardPoint" type="Marker2D" parent="." unique_id=415091281]
+position = Vector2(719, 359)
+
+[node name="PlayerSpawns" type="Marker2D" parent="." unique_id=981548970]
+position = Vector2(58, 324)
+
+[node name="RIGHT" type="Marker2D" parent="PlayerSpawns" unique_id=497645367]
+position = Vector2(1041, -3)
+
+[node name="DOWN" type="Marker2D" parent="PlayerSpawns" unique_id=123806915]
+position = Vector2(521, 259)

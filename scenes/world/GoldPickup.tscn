@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dcw3jxn85e8uh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_timmb"]
+
+[node name="GoldPickup" type="Area2D" unique_id=1902789680]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=226492735]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=685098458]
+shape = SubResource("CapsuleShape2D_timmb")
+debug_color = Color(1, 1, 0, 1)
