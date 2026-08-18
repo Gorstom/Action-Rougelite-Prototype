@@ -5,7 +5,7 @@
 
 # Milestone 2
 - [x] Procedural rooms
-- [ ] Loot
+- [x] Loot
 
 # Milestone 3
 - [ ] Town hub
