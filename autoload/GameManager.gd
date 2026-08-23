@@ -44,6 +44,7 @@ func quit_game():
 
 func _ready():
 	GameLogger.debug("GameManager", "GameManager ready")
+	GameLogger.debug("GameManager", "Current state: %s" % GameState.keys()[state])
 
 
 func _handle_esc():
