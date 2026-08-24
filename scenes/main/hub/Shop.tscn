@@ -1,3 +1,12 @@
 [gd_scene format=3 uid="uid://bumxvc15xc8qo"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0303e"]
+size = Vector2(60, 52)
+
 [node name="Shop" type="Area2D" unique_id=1358172552]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2030296702]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=662374527]
+shape = SubResource("RectangleShape2D_0303e")
+debug_color = Color(0.5219293, 0.31247437, 0.7372704, 0.41960785)

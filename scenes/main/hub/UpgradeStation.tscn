@@ -1,3 +1,13 @@
 [gd_scene format=3 uid="uid://s3fi4fomijb2"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0303e"]
+size = Vector2(58, 50)
+
 [node name="UpgradeStation" type="Area2D" unique_id=1660229241]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=667195224]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=326100672]
+position = Vector2(19, 15)
+shape = SubResource("RectangleShape2D_0303e")
+debug_color = Color(0.23210761, 0.6225079, 0.40521103, 0.41960785)
