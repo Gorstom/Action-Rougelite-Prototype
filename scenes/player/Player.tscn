@@ -5,6 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o8nba"]
 size = Vector2(16, 24)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wr5hl"]
+size = Vector2(42, 51)
+
 [node name="Player" type="CharacterBody2D" unique_id=1267341805 groups=["player"]]
 collision_mask = 2
 motion_mode = 1
@@ -17,3 +20,9 @@ modulate = Color(0.80830705, 0, 0.15078527, 1)
 shape = SubResource("RectangleShape2D_o8nba")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=562689518]
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1212529961]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=20171814]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_wr5hl")

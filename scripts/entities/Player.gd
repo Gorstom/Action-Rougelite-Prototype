@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var interaction_area: Area2D = $InteractionArea
 
 @export var speed := 200.0
 @export var max_hp := 100
@@ -38,6 +39,13 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("attack"):
 		attack()
+	
+	if Input.is_action_just_pressed("interact"):
+		var areas := interaction_area.get_overlapping_areas()
+
+		for area in areas:
+			if area.has_method("interact"):
+				area.interact()
 
 func attack():
 	if not can_attack:

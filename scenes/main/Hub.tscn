@@ -10,7 +10,10 @@
 [node name="Player" parent="." unique_id=1267341805 instance=ExtResource("1_kh5ft")]
 
 [node name="DungeonPortal" parent="." unique_id=573450113 instance=ExtResource("2_rjwyw")]
+position = Vector2(0, -272)
 
 [node name="Shop" parent="." unique_id=1358172552 instance=ExtResource("3_1oqkq")]
+position = Vector2(-288, 118)
 
 [node name="UpgradeStation" parent="." unique_id=1660229241 instance=ExtResource("4_h5blg")]
+position = Vector2(-310, -106)
