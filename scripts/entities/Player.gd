@@ -41,10 +41,17 @@ func _physics_process(delta):
 		attack()
 	
 	if Input.is_action_just_pressed("interact"):
+		GameLogger.debug("Player", "Interact pressed")
+
 		var areas := interaction_area.get_overlapping_areas()
 
+		GameLogger.debug("Player", "Found areas: %d" % areas.size())
+
 		for area in areas:
+			GameLogger.debug("Player", "Area: %s" % area.name)
+
 			if area.has_method("interact"):
+				GameLogger.debug("Player", "Calling interact on: %s" % area.name)
 				area.interact()
 
 func attack():

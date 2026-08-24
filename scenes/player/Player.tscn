@@ -22,6 +22,8 @@ shape = SubResource("RectangleShape2D_o8nba")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=562689518]
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=1212529961]
+collision_layer = 8
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=20171814]
 position = Vector2(0, 1.5)

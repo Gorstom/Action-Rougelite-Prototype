@@ -10,13 +10,12 @@ func start_run():
 	get_tree().change_scene_to_file("res://scenes/main/GameScreen.tscn")
 
 func return_to_hub():
-	#state = GameState.HUB
-	#get_tree().paused = false
-	#get_tree().change_scene_to_file("res://scenes/main/Hub.tscn")
-	
-	#put a placeholder while hub does not exist 
 	GameLogger.info("GameManager", "Returning to hub")
-	restart_run()
+	state = GameState.HUB
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/main/Hub.tscn")
+	
+	
 
 func on_player_died():
 	# prevent enemy outlives gamescene after player death

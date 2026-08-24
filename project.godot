@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Action Rougelite Prototype"
 config/description="Roguelite prototype project. Systems testing: AI, economy, procedural generation."
-config/version="0.1.0"
+config/version="0.1.1"
 config/tags=PackedStringArray("2d", "ai", "procedural")
 run/main_scene="uid://b8x45i7tr6o0u"
 config/features=PackedStringArray("4.7", "Forward Plus")
