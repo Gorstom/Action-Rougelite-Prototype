@@ -1,3 +1,16 @@
 [gd_scene format=3 uid="uid://bxcipbr3023ux"]
 
+[ext_resource type="PackedScene" uid="uid://cseughat2laxw" path="res://scenes/player/Player.tscn" id="1_kh5ft"]
+[ext_resource type="PackedScene" uid="uid://o3enptbs45cq" path="res://scenes/main/hub/DungeonPortal.tscn" id="2_rjwyw"]
+[ext_resource type="PackedScene" uid="uid://bumxvc15xc8qo" path="res://scenes/main/hub/Shop.tscn" id="3_1oqkq"]
+[ext_resource type="PackedScene" uid="uid://s3fi4fomijb2" path="res://scenes/main/hub/UpgradeStation.tscn" id="4_h5blg"]
+
 [node name="Hub" type="Node2D" unique_id=841119975]
+
+[node name="Player" parent="." unique_id=1267341805 instance=ExtResource("1_kh5ft")]
+
+[node name="DungeonPortal" parent="." unique_id=573450113 instance=ExtResource("2_rjwyw")]
+
+[node name="Shop" parent="." unique_id=1358172552 instance=ExtResource("3_1oqkq")]
+
+[node name="UpgradeStation" parent="." unique_id=1660229241 instance=ExtResource("4_h5blg")]

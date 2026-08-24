@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://o3enptbs45cq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_la1ka"]
+radius = 61.0
+height = 122.0
+
+[node name="DungeonPortal" type="Area2D" unique_id=573450113]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=681528625]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1039676107]
+shape = SubResource("CapsuleShape2D_la1ka")
