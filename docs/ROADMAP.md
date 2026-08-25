@@ -54,7 +54,7 @@ Goal: First full “run” structure.
 ## Phase 4 – Extraction Loop
 Goal: Core roguelite loop is functional.
 ### Tasks
-- [ ] Exit system (return to hub)
+- [x] Exit system (return to hub)
 - [x] Gold / currency system
 - [ ] Death penalty
 - [ ] Hub scene return flow
