@@ -78,3 +78,6 @@ position = Vector2(58, 324)
 
 [node name="UP" type="Marker2D" parent="PlayerSpawns" unique_id=382272028]
 position = Vector2(520, -73)
+
+[node name="ExitPoint" type="Marker2D" parent="." unique_id=1810099663]
+position = Vector2(433, 268)

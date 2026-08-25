@@ -4,6 +4,7 @@ extends Node
 @export var rooms: Array[PackedScene]
 @export var chest_scene: PackedScene
 @export var gold_pickup_scene: PackedScene
+@export var exit_scene: PackedScene
 
 @onready var room_container = $"../World/RoomContainer"
 
@@ -246,6 +247,15 @@ func spawn_loot(position: Vector2):
 	current_room.add_child(gold)
 	GameLogger.info("RoomManager", "Loot spawned")
 
+func spawn_exit():
+	var exit = exit_scene.instantiate()
+	current_room.add_child(exit)
+	
+	var exit_point = current_room.get_node("ExitPoint")
+	exit.position = exit_point.position
+	
+	GameLogger.info("RoomManager", "Exit spawned")
+
 func _on_enemy_killed(enemy_position: Vector2):
 	enemies_alive -= 1
 	GameLogger.info("RoomManager", "Enemy killed")
@@ -259,6 +269,7 @@ func _on_enemy_killed(enemy_position: Vector2):
 		state = RoomState.CLEANED
 		
 		spawn_reward()
+		spawn_exit()
 		current_room.lock_doors(false)
 		
 		GameLogger.info("RoomManager", "Room cleaned")
