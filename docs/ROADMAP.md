@@ -56,8 +56,8 @@ Goal: Core roguelite loop is functional.
 ### Tasks
 - [x] Exit system (return to hub)
 - [x] Gold / currency system
-- [ ] Death penalty
-- [ ] Hub scene return flow
+- [x] Death penalty
+- [x] Hub scene return flow
 - [ ] Risk/reward decisions
 
 ### Result

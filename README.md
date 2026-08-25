@@ -4,8 +4,7 @@ Top-down action roguelite prototype made in Godot 4.7 using GDScript. Focuses on
 
 ## Project status
 
-Currently project is nearing completion. The remaining work focuses on 
-finishing the core extraction loop, with possible additional tweaking with progression system design and implementation. Further development (at least for now) beyond current scope is not planned.
+The project is now essentially complete. The remaining work is limited to potential refinements of the progression system. Further development beyond the current scope is not planned, at least for now.
 
 ## Possible future features
 - basic progression system
@@ -18,8 +17,6 @@ finishing the core extraction loop, with possible additional tweaking with progr
 - top-down movement
 - simple game loop (death → restart)
 - procedural dungeon generation
-
-### In progress
 - extraction system
 
 ## Goal of this project

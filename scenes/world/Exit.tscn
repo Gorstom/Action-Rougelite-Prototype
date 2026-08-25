@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cngsccmrotbw2"]
+
+[ext_resource type="Script" uid="uid://blry04o8jjxja" path="res://scripts/systems/dungeon/Exit.gd" id="1_jwogi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0303e"]
+size = Vector2(43, 37)
+
+[node name="Exit" type="Area2D" unique_id=1387219259]
+collision_layer = 2
+script = ExtResource("1_jwogi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2136728488]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1803870442]
+visibility_layer = 2
+shape = SubResource("RectangleShape2D_0303e")
+debug_color = Color(1, 1, 1, 0.41960785)
